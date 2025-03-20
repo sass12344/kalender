@@ -10,3 +10,4 @@ Funktsionaalsus:
 - Serveri kaudu saab ka jagada tegevusi erinevate kasutajate vahel või isegi määrata ülesande teisele kasutajale.
     - Muudatustest antakse teada e-posti teel.
 - Ligipääsu ülesannetele (ja kasutajakontosid, turvalisust) tagab server.
+- Saab subscribeida online ical kalendritele ja updateida neid
