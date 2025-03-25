@@ -1,5 +1,5 @@
 # Tegevuste planeerija - OOP kevad 2025
-*Uku Mihkel Kolka, Jesper Korsen, Sander Sarapuu*
+*Uku Mihkel Kolka (MisTeha), Jesper Korsen (YesterKo), Sander Sarapuu(sass12344)*
 
 Funktsionaalsus:
 - Graafiline liides, millega saab kirja panna ülesandeid koos tähtaegadega. GUI annab kasutajale ülevaate tulevastest ja möödunud tegevustest.
