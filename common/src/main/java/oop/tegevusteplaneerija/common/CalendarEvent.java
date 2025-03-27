@@ -1,7 +1,6 @@
 package oop.tegevusteplaneerija.common;
 
 public class CalendarEvent {
-    private int id;
     private String title;
     private String description;
 
@@ -15,6 +14,7 @@ public class CalendarEvent {
     public String getTitle() {
         return title;
     }
+
     public String getDescription() {
         return description;
     }
@@ -22,7 +22,6 @@ public class CalendarEvent {
     @Override
     public String toString() {
         return "CalendarEvent{" +
-                "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 '}';

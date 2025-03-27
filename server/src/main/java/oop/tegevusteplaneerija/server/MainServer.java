@@ -1,20 +1,19 @@
 package oop.tegevusteplaneerija.server;
 
 
-import static java.lang.reflect.Array.set;
-import static spark.Spark.*;
 import com.google.gson.Gson;
 import oop.tegevusteplaneerija.common.CalendarEvent;
 import oop.tegevusteplaneerija.common.DatabaseManager;
 
 import java.sql.SQLException;
-import java.util.List;
+
+import static spark.Spark.*;
 
 
 public class MainServer {
     public static void main(String[] args) {
         String envPort = System.getenv("PORT"); // azure teenuses on olemas
-        int portnumber = envPort != null ? Integer.parseInt(envPort) :  8080;
+        int portnumber = envPort != null ? Integer.parseInt(envPort) : 8080;
         port(portnumber);
         DatabaseManager dbm = new DatabaseManager("home/server.db");
         try {
@@ -37,8 +36,8 @@ public class MainServer {
         }, gson::toJson);
 
         get("/tere", (req, res) -> {
-           res.type("application/json");
-           return "tere";
+            res.type("application/json");
+            return "tere";
         }, gson::toJson);
 
         post("/events", (req, res) -> {

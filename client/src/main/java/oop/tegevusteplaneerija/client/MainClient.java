@@ -19,7 +19,7 @@ public class MainClient extends Application {
     private static DatabaseManager startDatabase() throws SQLException {
         DatabaseManager dbm = new DatabaseManager("client.db");
         dbm.init();
-        dbm.insertEvent(1, "Kliendi sündmus", "lihtsalt prooviks");
+        dbm.insertEvent("Kliendi sündmus", "lihtsalt prooviks");
         return dbm;
     }
 
@@ -27,11 +27,8 @@ public class MainClient extends Application {
     public void start(Stage primaryStage) throws SQLException {
         // Create an event using the common module
         CalendarEvent event = new CalendarEvent(
-                2,
                 "Client Meeting",
-                "Discuss UI design",
-                "2:00 PM",
-                "3:00 PM"
+                "Discuss UI design"
         );
 
         Label label = new Label("Client started with event: " + event.getTitle());

@@ -8,7 +8,7 @@ public class DatabaseManager {
     /**
      * Objekt, mille meetodite abil saab lisada ja kustutada evente jms. Nõuab
      *
-     * @param dbFilePath
+     * @param dbFilePath faili asukoht
      */
     public DatabaseManager(String dbFilePath) {
         this.url = "jdbc:sqlite:data/" + dbFilePath;
