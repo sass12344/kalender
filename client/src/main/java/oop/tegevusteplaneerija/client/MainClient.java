@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class MainClient extends Application {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         launch(args);
     }
 
