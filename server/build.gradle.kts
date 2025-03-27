@@ -1,6 +1,7 @@
 plugins {
     java
     application
+    id("com.github.johnrengelman.shadow") version "8.1.1" // selleks, et Azure saaks käivitada
 }
 
 repositories {
@@ -9,8 +10,9 @@ repositories {
 
 dependencies {
     implementation(project(":common"))
-    // Add server-specific dependencies, for example, a REST API framework like Javalin or Spring Boot
-    // implementation("io.javalin:javalin:4.6.4")
+    implementation("com.sparkjava:spark-core:2.9.3")
+    implementation("com.google.code.gson:gson:2.10.1")
+
 }
 
 application {
