@@ -14,6 +14,5 @@ dependencies {
 }
 
 application {
-    //TODO: Replace with the fully qualified main class for your server
     mainClass.set("oop.tegevusteplaneerija.server.MainServer")
 }
