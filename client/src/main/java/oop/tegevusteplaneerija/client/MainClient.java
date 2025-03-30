@@ -1,6 +1,8 @@
 package oop.tegevusteplaneerija.client;
 
 import javafx.scene.Node;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import oop.tegevusteplaneerija.common.CalendarEvent;
@@ -38,6 +40,14 @@ public class MainClient extends Application {
 
         VBox events = new VBox();
         BorderPane root = new BorderPane(events);
+
+        ContextMenu contextMenu = new ContextMenu();
+        contextMenu.getItems().add(new MenuItem("Add Event"));
+
+        root.setOnContextMenuRequested(e -> {
+            contextMenu.show(root.getScene().getWindow(), e.getScreenX(), e.getScreenY());
+        });
+
         events.getChildren().addAll(event);
         Scene scene = new Scene(root, 300, 200);
 

@@ -8,6 +8,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import oop.tegevusteplaneerija.common.CalendarEvent;
 
+import java.io.InputStream;
+
 
 public class Widgets {
 
@@ -15,7 +17,7 @@ public class Widgets {
         Label label = new Label("%s: %s to %s".formatted(event.getTitle(), event.getStartTime(), event.getEndTime()));
         Label text = new Label(event.getDescription());
 
-        Image image = new Image("event-end.png");
+        Image image = new Image(Widgets.class.getClassLoader().getResourceAsStream("event-end.png"));
         Button button = new IconButton(image, image.getHeight(), image.getWidth());
 
         VBox info = new VBox(label, text);
