@@ -1,5 +1,7 @@
 package oop.tegevusteplaneerija.client;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
@@ -8,13 +10,11 @@ import javafx.scene.layout.VBox;
 import oop.tegevusteplaneerija.common.CalendarEvent;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MainClient extends Application {
 
@@ -41,14 +41,29 @@ public class MainClient extends Application {
         VBox events = new VBox();
         BorderPane root = new BorderPane(events);
 
+
+        events.getChildren().addAll(event);
+
         ContextMenu contextMenu = new ContextMenu();
-        contextMenu.getItems().add(new MenuItem("Add Event"));
+        MenuItem newEventItem = new MenuItem("Add Event");
+        newEventItem.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    var dialog = new EventDialog(actionEvent, primaryStage);
+                    var event = dialog.waitForResult();
+                    if (event != null) events.getChildren().add(Widgets.EventWidget(event));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+        contextMenu.getItems().add(newEventItem);
 
         root.setOnContextMenuRequested(e -> {
             contextMenu.show(root.getScene().getWindow(), e.getScreenX(), e.getScreenY());
         });
 
-        events.getChildren().addAll(event);
         Scene scene = new Scene(root, 300, 200);
 
         primaryStage.setTitle("Calendar Client");
