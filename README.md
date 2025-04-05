@@ -1,3 +1,5 @@
+***Hoiatus! Nüüd arendatakse edasi [siin](https://github.com/misteha/kalender)***
+
 # Tegevuste planeerija - OOP kevad 2025
 *Uku Mihkel Kolka (MisTeha), Jesper Korsen (YesterKo), Sander Sarapuu (sass12344)*
 
